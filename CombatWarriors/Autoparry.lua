@@ -22,7 +22,7 @@ end
 function Parry()
     VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
     RunService.RenderStepped:Wait()
-    VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
+    VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 end
 
 function ConnectParry(Player)
