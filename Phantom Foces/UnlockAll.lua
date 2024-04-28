@@ -12,7 +12,6 @@ Enable FFlagDebugRunParallelLuaOnMainThread inside of the JSOn file.
 ]]
 
 local Require = rawget(getrenv().shared, "require")
-local Spawn = task.spawn
 
 --//Slooooooooooooooooooooooooooow
 local PlayerDataUtils = Require("PlayerDataUtils")
