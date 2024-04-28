@@ -3,7 +3,7 @@ Before using:
 
 Make sure that you open roblox player as file location until you reach the files.
 If there isn't already, create a new folder called ClientSettings
-Inside clientappsettings, create a JSON file called ClientAppSettings (ClientAppSettings.json)
+Inside ClientSettings, create a JSON file called ClientAppSettings (ClientAppSettings.json)
 Enable FFlagDebugRunParallelLuaOnMainThread inside of the JSOn file.
 
 {
