@@ -1,4 +1,11 @@
 --// I know that it is a very unique way of putting it and now i see that this script isnt the best
+--[[
+Soon:
+Complete rewrite
+New UI
+GodMode, Fly, Infinite Cash maybe, Auto collect valuables, autosell and more
+]]
+
 local Linoria = loadstring(request({Url = "https://raw.githubusercontent.com/theonlylegacy/Libraries/main/Linoria.lua", Method = "GET"}).Body){}
 
 local Players = game:GetService("Players")
