@@ -8,7 +8,7 @@ Infinite Range: Allows infinite interaction range for all objectives within the 
 
 Instant Interact: Allows you to instantly interact with any proximityprompt within the game (includes objectives)
 
-Instant Kill: Automatically kills near players when you are on the monster team
+Instant Kill: Instantly kills near players (PATCHED: its now replaced by killaura)
 
 No Stun: Blocks any form of stun (includes the dance meter)
 
@@ -24,7 +24,7 @@ Highlight Monsters: Highlights all monsters if you are a survivor and highlights
 
 Highlight Objectives: Highlights all objectives if you are a survivor but highlights all the players if you are a monster
 
-Force Vote: Adds 20 votes to selected game mode per click
+Force Vote: Adds 20 votes to selected game mode per click (PATCHED)
 
 Unload: Unloads cheat (the ui doesnt fully unload because the guy that made it doesnt know what he's doing)
 ]]
