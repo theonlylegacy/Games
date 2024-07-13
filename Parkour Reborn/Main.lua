@@ -3,7 +3,7 @@
 Soon:
 Complete rewrite
 New UI
-GodMode, Fly, Infinite Cash maybe, Auto collect valuables, autosell and more
+GodMode, Fly, Infinite Cash maybe, Auto collect valuables (Priority, Filter), Auto collect delivery, autosell and more
 ]]
 
 local Linoria = loadstring(request({Url = "https://raw.githubusercontent.com/theonlylegacy/Libraries/main/Linoria.lua", Method = "GET"}).Body){}
