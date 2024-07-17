@@ -1,9 +1,51 @@
 --// I know that it is a very unique way of putting it and now i see that this script isnt the best
 --[[
-Soon:
-Complete rewrite
-New UI
-GodMode, Fly, Infinite Cash maybe, Auto collect valuables (Priority, Filter), Auto collect delivery, autosell and more
+Working on: Rewrite
+Features: {{
+
+CLIENT TAB
+Entity:
+    Infinite Respawns
+    Infinite Actions
+    Always Perfect
+    Always Momentum
+    Fast Slide
+    Fly
+    No Damage (God mode)
+
+Animation Select:
+    Play
+    Fidgets (Shiver, Stetch, Leg Stretch, Jumping Jacks, Shadow Jog?, Wipe Shoe)
+
+Travel Select:
+    Travel
+    Destinations (Julian, Derek, Petra)
+
+Player Select
+    Highlight Entity
+    Travel to Entity
+    Travel to Checkpoint
+    Players
+
+Grappler:
+    Fast Pull
+    Always Swing
+    Infinite Ammo
+    Infinite Distance
+    Instant Reach
+
+WORLD TAB
+Farm:
+    Valuables
+    Deliveries
+    Auto Sell
+    Auto Loot
+
+SETTINGS TAB
+Internal:
+    Unload
+    Cache (Running Thread(s), Running Connection(s))
+}}
 ]]
 
 local Linoria = loadstring(request({Url = "https://raw.githubusercontent.com/theonlylegacy/Libraries/main/Linoria.lua", Method = "GET"}).Body){}
