@@ -40,6 +40,7 @@ Farm:
     Deliveries
     Auto Sell
     Auto Loot
+    Filter (None, Rarity)
 
 SETTINGS TAB
 Internal:
