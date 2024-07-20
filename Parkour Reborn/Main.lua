@@ -1,6 +1,6 @@
---// I know that it is a very unique way of putting it and now i see that this script isnt the best
 --[[
-Working on: Rewrite
+Working on Rewrite, releasing after combat is released
+
 Features: {{
 
 CLIENT TAB
