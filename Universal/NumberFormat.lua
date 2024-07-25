@@ -1,4 +1,6 @@
 local function Format(Number)
+	assert(type(Number) == "number", "argument #1 expects a number")
+	
 	local String = string.reverse(tostring(Number))
 	local Formatted = ""
 	local CurrentNumber = 0
