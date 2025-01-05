@@ -1,5 +1,5 @@
 --[[
-Working on Rewrite, releasing after combat is released
+Working on Rewrite, releasing after combat is FULLY released
 
 Features: {{
 
