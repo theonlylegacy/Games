@@ -6,7 +6,7 @@ local Character = LocalPlayer.Character
 local Tool = Character and Character:FindFirstChildOfClass("Tool") or nil
 
 if Tool and Tool:FindFirstChild("Settings") and Tool.Settings:FindFirstChild("BulletsRemaining") then
-    for _, Zombie in workspace.Zombs:GetChildren() do
+    for _, Zombie in workspace.Zombs:GetChildren() do -- poetry
         local Head = Zombie:FindFirstChild("Head") or nil
 
         if Head then
