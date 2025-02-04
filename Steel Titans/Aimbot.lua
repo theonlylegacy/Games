@@ -59,7 +59,7 @@ Old = hookmetamethod(game, "__namecall", function(Self, ...)
 
         if Tank then
             local RearPlate = Tank.FindFirstChild(Tank, "Rear", true) -- this is all really crucial to make sure that you inflict damage during 99% of all your hits
-            local Origin = RearPlate.CFrame.Position + Vector3.new(0, 30, 0)
+            local Origin = RearPlate.CFrame.Position + Vector3.new(0, 0.1, 0)
             local Destination = RearPlate.CFrame.Position
 
             -- im too lazy to change this
