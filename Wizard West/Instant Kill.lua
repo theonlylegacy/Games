@@ -48,7 +48,7 @@ __namecall = hookmetamethod(game, "__namecall", function(Self, ...)
     end
 
     if Method == "FireServer" and Self.Name == "SpellClientFire" and table.find(Spells, CurrentSpell) then
-        task.spawn(function()
+        task.spawn(function() -- I was going to implement some sort of garbage collector for threads.. Stay bricked task scheduler
             while Self and Self.Parent do
                 local Target = GetTarget()
 
