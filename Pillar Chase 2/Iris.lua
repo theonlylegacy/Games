@@ -1,6 +1,8 @@
 -- might be outdated asf
 
-local Iris = loadstring(game:HttpGet("https://raw.githubusercontent.com/theonlylegacy/Libraries/main/Linoria.lua"))()()
+-- might be outdated asf
+
+local Iris = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/Library.lua"))()
 local Services = setmetatable({}, {__index = function(...)
 	return game:GetService(select(2, ...))
 end})
@@ -477,8 +479,8 @@ local Window = Iris:CreateWindow({Title = CreateKey("Iris"), Center = true, Auto
 					for Key, Connection in Connections do
 						RemoveConnection(Key)
 					end
-			
-					CoreGui.imgui:Destroy()
+
+					Iris:Unload()
 					table.clear(Threads)
 					table.clear(Connections)
 					table.clear(Cheats)
