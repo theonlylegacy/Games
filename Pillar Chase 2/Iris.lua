@@ -1,7 +1,5 @@
 -- might be outdated asf
 
--- might be outdated asf
-
 local Iris = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/Library.lua"))()
 local Services = setmetatable({}, {__index = function(...)
 	return game:GetService(select(2, ...))
