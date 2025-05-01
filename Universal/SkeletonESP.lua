@@ -1,4 +1,4 @@
--- ADDED R15
+-- Added R15 + Outlines
 
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
