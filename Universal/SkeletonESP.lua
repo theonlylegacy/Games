@@ -1,4 +1,4 @@
--- R6 only so far
+-- ADDED R15
 
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
@@ -68,16 +68,67 @@ local Utility = {} do
             end
         end
 
+        if RigType == Enum.HumanoidRigType.R15 then
+            local Head = Character:FindFirstChild("Head")
+            local UpperTorso = Character:FindFirstChild("UpperTorso")
+            local LowerTorso = Character:FindFirstChild("LowerTorso")
+            
+            local LeftUpperArm = Character:FindFirstChild("LeftUpperArm")
+            local LeftLowerArm = Character:FindFirstChild("LeftLowerArm")
+            local LeftHand = Character:FindFirstChild("LeftHand")
+            
+            local RightUpperArm = Character:FindFirstChild("RightUpperArm")
+            local RightLowerArm = Character:FindFirstChild("RightLowerArm")
+            local RightHand = Character:FindFirstChild("RightHand")
+            
+            local LeftUpperLeg = Character:FindFirstChild("LeftUpperLeg")
+            local LeftLowerLeg = Character:FindFirstChild("LeftLowerLeg")
+            local LeftFoot = Character:FindFirstChild("LeftFoot")
+            
+            local RightUpperLeg = Character:FindFirstChild("RightUpperLeg")
+            local RightLowerLeg = Character:FindFirstChild("RightLowerLeg")
+            local RightFoot = Character:FindFirstChild("RightFoot")
+
+            if Head and UpperTorso and LowerTorso and LeftUpperArm and LeftLowerArm and LeftHand and RightUpperArm and RightLowerArm and RightHand and LeftUpperLeg and LeftLowerLeg and LeftFoot and RightUpperLeg and RightLowerLeg and RightFoot then
+                Array.Head = Utility:GetScreenPosition(Head.Position)
+
+                Array.Neck = Utility:GetScreenPosition((UpperTorso.Position + LowerTorso.Position) / 2 + Vector3.new(0, UpperTorso.Size.Y / 1.5, 0))
+                Array.Waist = Utility:GetScreenPosition(LowerTorso.Position)
+
+                Array.LeftShoulder = Utility:GetScreenPosition(LeftUpperArm.LeftShoulderAttachment.WorldPosition - Vector3.new(0, 0.2, 0))
+                Array.RightShoulder = Utility:GetScreenPosition(RightUpperArm.RightShoulderAttachment.WorldPosition - Vector3.new(0, 0.2, 0))
+
+                Array.LeftHand = Utility:GetScreenPosition(LeftHand.Position)
+                Array.RightHand = Utility:GetScreenPosition(RightHand.Position)
+    
+                Array.LeftFoot = Utility:GetScreenPosition(LeftFoot.Position)
+                Array.RightFoot = Utility:GetScreenPosition(RightFoot.Position)
+            end
+        end
+
         return Array
     end
 end
 
-Utility:Connect(DrawingImmediate.new(), function(Renderer)
+Utility:Connect(DrawingImmediate.New(), function(Renderer)
     for Index, Data in Utility:GetPlayers() do
         local Offsets = Utility:GetOffsets(Data.Character, Data.Humanoid.RigType)
 
         if Offsets.Head and Offsets.Neck and Offsets.Waist and Offsets.LeftShoulder and Offsets.RightShoulder and Offsets.LeftHand and Offsets.RightHand and Offsets.LeftFoot and Offsets.RightFoot then
+            local Outline = Color3.fromRGB(0, 0, 0)
             local Color = Color3.fromRGB(255, 255, 255)
+
+            Renderer.Line(Offsets.Head, Offsets.Neck, Outline, 1, 2)
+            Renderer.Line(Offsets.Neck, Offsets.Waist, Outline, 1, 2)
+            
+            Renderer.Line(Offsets.Neck, Offsets.LeftShoulder, Outline, 1, 2)
+            Renderer.Line(Offsets.Neck, Offsets.RightShoulder, Outline, 1, 2)
+
+            Renderer.Line(Offsets.LeftShoulder, Offsets.LeftHand, Outline, 1, 2)
+            Renderer.Line(Offsets.RightShoulder, Offsets.RightHand, Outline, 1, 2)
+
+            Renderer.Line(Offsets.Waist, Offsets.LeftFoot, Outline, 1, 2)
+            Renderer.Line(Offsets.Waist, Offsets.RightFoot, Outline, 1, 2)
 
             Renderer.Line(Offsets.Head, Offsets.Neck, Color, 1, 1)
             Renderer.Line(Offsets.Neck, Offsets.Waist, Color, 1, 1)
