@@ -1,40 +1,39 @@
 local ReGui = { };
 
-local InsertService = Game:GetService("InsertService");
-local Players = Game:GetService("Players");
-local HttpService = Game:GetService("HttpService");
-
-function ReGui:GetLatestVersion()
-    local File = "https://github.com/depthso/Dear-ReGui/releases/latest/download/ReGui.rbxm";
+function ReGui:GetModelBinary(file)
     local Response = http.request({
-        Url = File,
+        Url = string.format("https://github.com/depthso/Dear-ReGui/releases/latest/download/%s", file),
         Method = "GET",
     });
 
-    if Response.Success then
-        return Response.Body;
-    end;
-end;
-
-function ReGui:Download()
-    local Binary = self:GetLatestVersion();
-
-    if not Binary then
+    if not Response.Success then
         return;
     end;
 
-    makefolder("ReGui");
-    writefile("ReGui/File.rbxm", Binary);
-    task.delay(1, delfolder, "ReGui");
-
-    return getcustomasset("ReGui/File.rbxm");
+    return Response.Body;
 end;
 
-function ReGui:Load()
-    local AssetId = self:Download();
-    local Asset = getobjects(AssetId)[1];
+function ReGui:GetAssetId()
+    local AssetId = "";
+    local Binary = self:GetModelBinary("ReGui.rbxm");
+    local Hash = crypt.hash(tostring(math.random()), "sha256");
+
+    if not (Binary and Hash) then
+        return;
+    end;
+
+    writefile(Hash, Binary);
+    AssetId = getcustomasset(Hash);
+    delfile(Hash);
+
+    return AssetId;
+end;
+
+function ReGui:Init()
+    local AssetId = self:GetAssetId();
+    local Asset = rawget(getobjects(AssetId), 1);
 
     return loadstring(Asset.Source)();
 end;
 
-return ReGui;
+return ReGui:Init();
